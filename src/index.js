@@ -1,6 +1,8 @@
 import React from 'react';
+import update from 'react-addons-update';
 import ReactDOM from 'react-dom';
 import './index.css';
+import cardData from './cardData.json';
 
 /*
   Game Structure
@@ -21,9 +23,16 @@ import './index.css';
 
 
 class CardDisplay extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+
   render() {
     return (
-      <div className="">The Cards Go Here</div>
+      <div className="">
+      {this.props.card.front}
+      </div>
 
       )
   }
@@ -33,41 +42,69 @@ class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this)
-    this.state = {value: ''};
+    this.onClick = this.onClick.bind(this);
   }
 
   render() {
+    const value = this.props.value;
     return(
       <div>
-        <input label="Answer" onChange={this.handleChange} value={this.state.value}></input>
-        <button onClick={this.onClick.bind(this)}>Submit</button>
+        <input label="Answer" onChange={this.handleChange} value={value}></input>
+        <button onClick={this.onClick}>Submit</button>
       </div>  
       )
   }
 
-  onClick(e) {
-    this.props.checkAnswer(this.state.value);
+  onClick() {
+    this.props.checkAnswer();
   }
 
   handleChange(e) {
-    this.setState({value: e.target.value});
+    this.props.onChange(e.target.value);
+    // this.setState({value: e.target.value});
   }
 }
 
 class Game extends React.Component {
   constructor(props) {
-    super(props);
-    
+     super(props);
+     this.handleChange = this.handleChange.bind(this);
+     this.checkAnswer  = this.checkAnswer.bind(this);
+     console.log(cardData);
+     this.state = {
+      card : {
+        front : 1,
+        answer : cardData.deck[0]
+      },
+      input : '',
+      set : cardData.set,
+      deck : cardData.deck
+    };
   }
-  checkAnswer(i) {
-    console.log(i);
+  
+  checkAnswer() {
+    console.log(this.state.input);
+    const i = Math.floor(Math.random() * (this.state.deck.length));
+    const newCard = cardData.deck[i - 1];
+    var newState = update(this.state, {
+      card: {
+        front : {$set: i}, 
+        answer : {$set : newCard}
+      }
+    });
+    this.setState(newState);
   }
+
+  handleChange(value) {
+    this.setState({input: value});
+  }
+
   render() {
     return (
       <div className="game">
         <div className="game-board">
-          <CardDisplay />
-          <AnswerForm checkAnswer={this.checkAnswer}/>
+          <CardDisplay card={this.state.card} cardSet={this.state.set}/>
+          <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
         </div>
         <div className="game-info">
           <div>{/* status */}</div>
