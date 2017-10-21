@@ -48,14 +48,16 @@ class AnswerForm extends React.Component {
   render() {
     const value = this.props.value;
     return(
-      <div>
+      <form  onSubmit={this.onClick}>
         <input label="Answer" onChange={this.handleChange} value={value}></input>
-        <button onClick={this.onClick}>Submit</button>
-      </div>  
+        <button type="submit" >Submit</button>
+      </form>  
       )
   }
 
-  onClick() {
+  onClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
     this.props.checkAnswer();
   }
 
@@ -83,7 +85,7 @@ class Game extends React.Component {
   }
   
   checkAnswer() {
-    console.log(this.state.input);
+    console.log(this.state.input === this.state.card.answer);
     const i = Math.floor(Math.random() * (this.state.deck.length));
     const newCard = cardData.deck[i - 1];
     var newState = update(this.state, {
