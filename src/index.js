@@ -29,12 +29,29 @@ class CardDisplay extends React.Component {
 
 
   render() {
+    const suffix = (this.props.cardSet === "day of the month")
+      ? this.suffix(this.props.card.front) : "";
     return (
       <div className="">
-      {this.props.card.front}
+      {this.props.card.front + suffix + " " + this.props.cardSet}
       </div>
 
       )
+  }
+
+  suffix(i) {
+    var j = i % 10,
+        k = i % 100;
+    if (j === 1 && k !== 11) {
+        return "st";
+    }
+    if (j === 2 && k !== 12) {
+        return "nd";
+    }
+    if (j === 3 && k !== 13) {
+        return "rd";
+    }
+    return "th";
   }
 }
 
@@ -92,7 +109,8 @@ class Game extends React.Component {
       card: {
         front : {$set: i + 1}, 
         answer : {$set : newCard}
-      }
+      },
+      input: {$set: ''}
     });
     this.setState(newState);
   }
