@@ -87,10 +87,10 @@ class Game extends React.Component {
   checkAnswer() {
     console.log(this.state.input === this.state.card.answer);
     const i = Math.floor(Math.random() * (this.state.deck.length));
-    const newCard = cardData.deck[i - 1];
+    const newCard = cardData.deck[i];
     var newState = update(this.state, {
       card: {
-        front : {$set: i}, 
+        front : {$set: i + 1}, 
         answer : {$set : newCard}
       }
     });
