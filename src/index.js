@@ -23,10 +23,6 @@ import cardData from './cardData.json';
 
 
 class CardDisplay extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
 
   render() {
     const suffix = (this.props.cardSet === "day of the month")
@@ -97,12 +93,15 @@ class Game extends React.Component {
       },
       input : '',
       set : cardData.set,
-      deck : cardData.deck
+      deck : cardData.deck,
+      score: 0
     };
   }
   
   checkAnswer() {
-    console.log(this.state.input === this.state.card.answer);
+    const answerCheck = (this.state.input === this.state.card.answer);
+    const newScore = answerCheck ? this.state.score + 1 : this.state.score - 1;
+    
     const i = Math.floor(Math.random() * (this.state.deck.length));
     const newCard = cardData.deck[i];
     var newState = update(this.state, {
@@ -110,7 +109,8 @@ class Game extends React.Component {
         front : {$set: i + 1}, 
         answer : {$set : newCard}
       },
-      input: {$set: ''}
+      input: {$set: ''},
+      score: {$set: newScore}
     });
     this.setState(newState);
   }
@@ -127,7 +127,7 @@ class Game extends React.Component {
           <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
         </div>
         <div className="game-info">
-          <div>{/* status */}</div>
+          <div>{this.state.score}</div>
           <ol>{/* TODO */}</ol>
         </div>
       </div>
