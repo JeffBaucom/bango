@@ -29,7 +29,7 @@ class CardDisplay extends React.Component {
     const suffix = (this.props.cardSet === "day of the month")
       ? this.suffix(this.props.card.front) : "";
     return (
-      <div className="">
+      <div className="card-text">
       {this.props.card.front + suffix + " " + this.props.cardSet}
       </div>
 
@@ -73,7 +73,7 @@ class AnswerForm extends React.Component {
   render() {
     const value = this.props.value;
     return(
-      <form  onSubmit={this.onClick}>
+      <form className="answer-form" onSubmit={this.onClick}>
         <input label="Answer" onChange={this.handleChange} value={value}></input>
         <button type="submit" >Submit</button>
       </form>  
@@ -132,8 +132,8 @@ class Game extends React.Component {
           <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
         </div>
         <div className="game-info">
-          <div>Score: {this.state.score}</div>
-          <div>{this.state.cardCount ? (<div>{ this.state.result ? "Correct!" : "Incorrect :(" }</div>) : (<div></div>)}</div>
+          <div className="score-line">Score: {this.state.score}</div>
+          {this.state.cardCount ? (<div className={` result ${this.state.result ? "result-correct" : "result-incorrect"}`}> { this.state.result ? "Correct!" : "Incorrect :(" } </div>) : (<div></div>)}
           <ol>{/* TODO */}</ol>
         </div>
       </div>

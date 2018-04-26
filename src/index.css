@@ -1,52 +1,51 @@
 body {
-  font: 20px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-family: Open-Sans, sans-serif;
 }
 
-ol, ul {
-  padding-left: 30px;
-}
-
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: #fff;
-  border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
-
-/*
 .game {
-  display: flex;
-  flex-direction: row;
+    margin: 0 auto;
 }
-*/
 
-.game-info {
-  margin-left: 20px;
+.card-text {
+    border: 1px solid gray;
+    border-radius: 0.3rem;
+    width: 50%;
+    margin: 0.2rem auto;
+    padding: 1rem;
+}
+
+.answer-form {
+    margin: .3rem;
+}
+
+.answer-form button  {
+    margin-left: 0.5rem;
+}
+
+.result {
+    padding: .2rem;
+    width: 20%;
+    margin: 0.2rem auto;
+    border-radius: 0.3rem;
+}
+
+.result-correct {
+    color: darkgreen;
+    background-color: lightgreen;
+}
+.result-incorrect {
+    color: darkred;
+    background-color: red;
+}
+
+.score-line {
+    margin: 0.2rem auto;
+    padding: 0.2rem;
+    background-color: lightgray;
+    border-radius: 0.3rem;
+    width: 20%;
 }
