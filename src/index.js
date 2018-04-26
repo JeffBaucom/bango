@@ -25,6 +25,7 @@ import cardData from './cardData.json';
 class CardDisplay extends React.Component {
 
   render() {
+    // Set the 'th' 'rd' 'st' suffix for card number
     const suffix = (this.props.cardSet === "day of the month")
       ? this.suffix(this.props.card.front) : "";
     return (
@@ -58,16 +59,6 @@ class AnswerForm extends React.Component {
     this.onClick = this.onClick.bind(this);
   }
 
-  render() {
-    const value = this.props.value;
-    return(
-      <form  onSubmit={this.onClick}>
-        <input label="Answer" onChange={this.handleChange} value={value}></input>
-        <button type="submit" >Submit</button>
-      </form>  
-      )
-  }
-
   onClick(event) {
     event.preventDefault();
     event.stopPropagation();
@@ -78,6 +69,17 @@ class AnswerForm extends React.Component {
     this.props.onChange(e.target.value);
     // this.setState({value: e.target.value});
   }
+
+  render() {
+    const value = this.props.value;
+    return(
+      <form  onSubmit={this.onClick}>
+        <input label="Answer" onChange={this.handleChange} value={value}></input>
+        <button type="submit" >Submit</button>
+      </form>  
+      )
+  }
+
 }
 
 class Game extends React.Component {
@@ -94,7 +96,8 @@ class Game extends React.Component {
       input : '',
       set : cardData.set,
       deck : cardData.deck,
-      score: 0
+      score: 0,
+      cardCount: 0
     };
   }
   
@@ -110,7 +113,9 @@ class Game extends React.Component {
         answer : {$set : newCard}
       },
       input: {$set: ''},
-      score: {$set: newScore}
+      score: {$set: newScore},
+      result: {$set: answerCheck},
+      cardCount: {$set: this.state.cardCount + 1}
     });
     this.setState(newState);
   }
@@ -127,7 +132,8 @@ class Game extends React.Component {
           <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
         </div>
         <div className="game-info">
-          <div>{this.state.score}</div>
+          <div>Score: {this.state.score}</div>
+          <div>{this.state.cardCount ? (<div>{ this.state.result ? "Correct!" : "Incorrect :(" }</div>) : (<div></div>)}</div>
           <ol>{/* TODO */}</ol>
         </div>
       </div>
