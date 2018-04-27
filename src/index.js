@@ -82,6 +82,22 @@ class AnswerForm extends React.Component {
 
 }
 
+class GameInfo extends React.Component {
+
+    render() {
+        return (
+          <div>
+          <div className="score-line">Score: {this.props.score}</div>
+          {this.props.cardCount
+              ? (<div className={` result ${this.props.result ? "result-correct" : "result-incorrect"}`}> 
+                  { this.props.result ? "Correct!" : "Incorrect :(" } </div>) : (<div></div>)}
+          <ol>{/* TODO */}</ol>
+          </div>
+        );
+        
+    }
+}
+
 class Game extends React.Component {
   constructor(props) {
      super(props);
@@ -131,12 +147,8 @@ class Game extends React.Component {
           <CardDisplay card={this.state.card} cardSet={this.state.set}/>
           <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
         </div>
-        <div className="game-info">
-          <div className="score-line">Score: {this.state.score}</div>
-          {this.state.cardCount ? (<div className={` result ${this.state.result ? "result-correct" : "result-incorrect"}`}> { this.state.result ? "Correct!" : "Incorrect :(" } </div>) : (<div></div>)}
-          <ol>{/* TODO */}</ol>
+        <GameInfo cardCount={this.state.cardCount} score={this.state.score} result={this.state.result}/>
         </div>
-      </div>
     );
   }
 }
