@@ -12,8 +12,6 @@ injectGlobal`
     body {
         margin: auto;
         background-color: #FFFEEF;
-        width: 80%;
-        padding: 10px;
         text-align: center;
         color: #323631;
     }

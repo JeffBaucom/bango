@@ -9,7 +9,10 @@ import AnswerForm from './AnswerForm';
 
 const StyledNav = styled.div`
     overflow: hidden;
-    background-color: #333;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #B9BAA3;
+    margin-bottom: 1rem;
 
     a {
         float: left;
@@ -19,6 +22,11 @@ const StyledNav = styled.div`
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
+    }
+
+    h1 {
+        margin: 0;
+        font-weight: 600;
     }
 `
 
@@ -73,7 +81,9 @@ class Bango extends React.Component {
   render() {
     return (
         <div>
-          <StyledNav></StyledNav>
+            <StyledNav>
+                <h1>番号</h1>
+            </StyledNav>
           <Game>
             <div className="game-board">
               <CardDisplay card={this.state.card} cardSet={this.state.set}/>
