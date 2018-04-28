@@ -13,7 +13,7 @@ const StyledInput = styled.input`
     font-weight: 600;
     font-size: 1.5rem;
     height: 10%;
-    width: 30%;
+    width: 60%;
 `
 
 const StyledButton = styled.button`
@@ -28,6 +28,13 @@ const StyledButton = styled.button`
     margin: 0.5rem 1.5rem;
     font-size: 1.4rem;
     padding: 0 1rem;
+`
+
+const StyledForm = styled.form`
+    display: flex;
+    justify-content: space-around;
+    max-width: 90%;
+    text-align: center;
 `
 
 class AnswerForm extends React.Component {
@@ -51,10 +58,10 @@ class AnswerForm extends React.Component {
   render() {
     const value = this.props.value;
     return(
-      <form className="answer-form" onSubmit={this.onClick}>
+      <StyledForm className="answer-form" onSubmit={this.onClick}>
         <StyledInput label="Answer" onChange={this.handleChange} value={value}></StyledInput>
         <StyledButton type="submit" >Submit</StyledButton>
-      </form>  
+      </StyledForm>  
       )
   }
 

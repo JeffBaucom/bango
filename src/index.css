@@ -2,18 +2,10 @@
     margin: 0 auto;
 }
 
-.answer-form {
-    margin: .3rem;
-}
-
-.answer-form button  {
-    margin-left: 0.5rem;
-}
-
 .result {
     padding: .2rem;
-    width: 40%;
     margin: 0.2rem auto;
+    width: 80%;
     border-radius: 0.3rem;
     font-size: 2rem;
 }
@@ -33,6 +25,6 @@
     background-color: #B9BAA3;
     color: #F7F4E4;
     border-radius: 0.3rem;
-    width: 40%;
+    width: 80%;
     font-size: 2rem;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import update from 'react-addons-update';
 import ReactDOM from 'react-dom';
-import './index.css';
 import './normalize.css';
 import './skeleton.css';
+import './index.css';
 import { injectGlobal } from 'styled-components';
 import Bango from './Bango';
 
@@ -11,6 +11,7 @@ import Bango from './Bango';
 injectGlobal`
     body {
         margin: auto;
+        max-width: 100%;
         background-color: #FFFEEF;
         text-align: center;
         color: #323631;
