@@ -1,16 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const CardText = styled.div`
+    border-radius: 0.3rem;
+    width: 50%;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #323631;
+    margin: 0.2rem auto;
+    padding: 2rem;
+    background-color: #B8D8D8;
+
+`
+
 class CardDisplay extends React.Component {
+
 
   render() {
     // Set the 'th' 'rd' 'st' suffix for card number
     const suffix = (this.props.cardSet === "day of the month")
       ? this.suffix(this.props.card.front) : "";
     return (
-      <div className="card-text">
-      {this.props.card.front + suffix + " " + this.props.cardSet}
-      </div>
+      <CardText>
+        {this.props.card.front + suffix + " " + this.props.cardSet}
+      </CardText>
 
       )
   }

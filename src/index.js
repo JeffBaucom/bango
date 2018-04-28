@@ -3,7 +3,7 @@ import update from 'react-addons-update';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './normalize.css';
-//import './skeleton.css';
+import './skeleton.css';
 import { injectGlobal } from 'styled-components';
 import Bango from './Bango';
 
@@ -11,13 +11,19 @@ import Bango from './Bango';
 injectGlobal`
     body {
         margin: auto;
-        background-color: #F7F4EA;
-        width: 50%;
+        background-color: #FFFEEF;
+        width: 80%;
         padding: 10px;
         text-align: center;
-        font-family: Open-Sans, sans-serif;
+        color: #323631;
     }
-`
+
+    button {
+        border-radius: 3px;
+        padding: 0px;
+        margin: 0px;
+    }
+`;
 
 /*
   Game Structure

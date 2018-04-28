@@ -7,6 +7,26 @@ import BangoInfo from './BangoInfo';
 import CardDisplay from './CardDisplay';
 import AnswerForm from './AnswerForm';
 
+const StyledNav = styled.div`
+    overflow: hidden;
+    background-color: #333;
+
+    a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+`
+
+const Game = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 
 class Bango extends React.Component {
   constructor(props) {
@@ -52,12 +72,15 @@ class Bango extends React.Component {
 
   render() {
     return (
-      <div className="game">
-        <div className="game-board">
-          <CardDisplay card={this.state.card} cardSet={this.state.set}/>
-          <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
-        </div>
-        <BangoInfo cardCount={this.state.cardCount} score={this.state.score} result={this.state.result}/>
+        <div>
+          <StyledNav></StyledNav>
+          <Game>
+            <div className="game-board">
+              <CardDisplay card={this.state.card} cardSet={this.state.set}/>
+              <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
+            </div>
+            <BangoInfo cardCount={this.state.cardCount} score={this.state.score} result={this.state.result}/>
+        </Game>
         </div>
     );
   }

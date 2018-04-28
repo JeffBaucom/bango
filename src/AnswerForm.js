@@ -1,6 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const StyledInput = styled.input`
+    border-radius: 5px;
+    background-color: #fefefe;
+    border-style: solid;
+    box-shadow: none;
+    border: 2px solid #323631;
+    color: #323631;
+    padding: 1.05rem;
+    margin: 0.5rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    height: 10%;
+    width: 30%;
+`
+
+const StyledButton = styled.button`
+    border-radius: 3px;
+    height: 10%
+    background-color: transparent;
+    border-style: solid;
+    box-shadow: none;
+    border: 2px solid #323631;
+    color: #323631;
+    font-weight: 700;
+    margin: 0.5rem 1.5rem;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+`
+
 class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
@@ -23,8 +52,8 @@ class AnswerForm extends React.Component {
     const value = this.props.value;
     return(
       <form className="answer-form" onSubmit={this.onClick}>
-        <input label="Answer" onChange={this.handleChange} value={value}></input>
-        <button type="submit" >Submit</button>
+        <StyledInput label="Answer" onChange={this.handleChange} value={value}></StyledInput>
+        <StyledButton type="submit" >Submit</StyledButton>
       </form>  
       )
   }

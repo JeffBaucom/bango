@@ -1,14 +1,5 @@
-
 .game {
     margin: 0 auto;
-}
-
-.card-text {
-    border: 1px solid gray;
-    border-radius: 0.3rem;
-    width: 50%;
-    margin: 0.2rem auto;
-    padding: 1rem;
 }
 
 .answer-form {
@@ -21,24 +12,27 @@
 
 .result {
     padding: .2rem;
-    width: 20%;
+    width: 40%;
     margin: 0.2rem auto;
     border-radius: 0.3rem;
+    font-size: 2rem;
 }
 
 .result-correct {
-    color: darkgreen;
-    background-color: lightgreen;
+    color: white;
+    background-color: #31704F;
 }
 .result-incorrect {
-    color: darkred;
-    background-color: red;
+    color: white;
+    background-color: #C05746;
 }
 
 .score-line {
     margin: 0.2rem auto;
     padding: 0.2rem;
-    background-color: lightgray;
+    background-color: #B9BAA3;
+    color: #F7F4E4;
     border-radius: 0.3rem;
-    width: 20%;
+    width: 40%;
+    font-size: 2rem;
 }
