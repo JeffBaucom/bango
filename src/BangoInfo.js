@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const StyledInfo = styled.div`
-    width: 60%;
+    min-width: 50%;
 `
 
 class BangoInfo extends React.Component {
