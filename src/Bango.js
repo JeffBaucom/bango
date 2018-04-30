@@ -2,6 +2,7 @@ import React from 'react';
 import cardData from './cardData.json';
 import update from 'react-addons-update';
 import styled from 'styled-components';
+import { toKana, isRomaji } from 'wanakana';
 
 
 import Nav from './Nav';
