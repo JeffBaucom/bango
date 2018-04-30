@@ -6,14 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jeffbaucom/bango-app.git"
-  },
-  "author": "",
+  "repository": "git+https://github.com/jeffbaucom/bango-app.git",
+  "author": "Jeff Baucom <jeffbaucom@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jeffbaucom/bango-app/issues"
   },
-  "homepage": "https://github.com/jeffbaucom/bango-app#readme"
+  "homepage": "https://github.com/jeffbaucom/bango-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "chalk": "^2.4.1",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.17.3"
+  }
 }
