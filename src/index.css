@@ -12,11 +12,11 @@
 }
 
 .result-correct {
-    color: white;
+    color: #F7F4E4;
     background-color: #31704F;
 }
 .result-incorrect {
-    color: white;
+    color: #F7F4E4;
     background-color: #C05746;
 }
 

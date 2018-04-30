@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 const CardText = styled.div`
     border-radius: 0.3rem;
-    max-width: 90%;
+    width: 80%;
+    height: 50%;
     font-size: 3.5rem;
     font-weight: 600;
     color: #323631;

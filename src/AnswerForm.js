@@ -35,6 +35,7 @@ const StyledForm = styled.form`
     justify-content: space-around;
     max-width: 90%;
     text-align: center;
+    margin-top: 1rem;
 `
 
 class AnswerForm extends React.Component {

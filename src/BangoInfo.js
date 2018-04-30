@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const StyledInfo = styled.div`
     min-width: 50%;
+    max-width: 4rem;
 `
 
 class BangoInfo extends React.Component {
