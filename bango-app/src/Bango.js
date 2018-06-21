@@ -55,8 +55,12 @@ class Bango extends React.Component {
   checkAnswer() {
     const answerCheck = (this.state.input === this.state.card.answer);
     const newScore = answerCheck ? this.state.score + 1 : this.state.score - 1;
-    
-    const i = Math.floor(Math.random() * (this.state.deck.length));
+
+    let i = Math.floor(Math.random() * (this.state.deck.length));
+    while (this.state.card - 1 === i) {
+      i = Math.floor(Math.random() * (this.state.deck.length));
+    }
+
     const newCard = cardData.deck[i];
     var newState = update(this.state, {
       card: {
