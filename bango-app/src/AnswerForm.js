@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//=============================================================================
+// Answer Form Component
+// Renders input and button for user's answers
+//=============================================================================
+
 const StyledInput = styled.input`
     border-radius: 5px;
     background-color: #fefefe;

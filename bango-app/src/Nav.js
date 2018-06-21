@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faCaret from '@fortawesome/fontawesome-free-solid/faCaretDown';
 
+//=============================================================================
+// Nav Component
+// Renders Top Nav Bar
+//=============================================================================
 
 const StyledNav = styled.div`
     overflow: hidden;

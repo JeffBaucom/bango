@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//=============================================================================
+// Score Line Component
+// Renders correct/incorrect status line and player's score
+//=============================================================================
 
 const StyledInfo = styled.div`
     min-width: 50%;

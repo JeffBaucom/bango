@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//=============================================================================
+// Card Component
+// Renders Flashcards
+//=============================================================================
+
 const CardText = styled.div`
     border-radius: 0.3rem;
     width: 80%;

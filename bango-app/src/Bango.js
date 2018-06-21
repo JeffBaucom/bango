@@ -10,6 +10,10 @@ import BangoInfo from './BangoInfo';
 import CardDisplay from './CardDisplay';
 import AnswerForm from './AnswerForm';
 
+//=============================================================================
+// Root Component
+//=============================================================================
+
 
 const Game = styled.div`
     display: flex;
@@ -33,6 +37,7 @@ const GameBoard = styled.div`
 class Bango extends React.Component {
   constructor(props) {
      super(props);
+
      this.handleChange = this.handleChange.bind(this);
      this.checkAnswer  = this.checkAnswer.bind(this);
      this.showMenu  = this.showMenu.bind(this);
