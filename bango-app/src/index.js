@@ -1,6 +1,8 @@
 import React from 'react';
 import update from 'react-addons-update';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import './normalize.css';
 import './skeleton.css';
 import './index.css';
@@ -45,7 +47,8 @@ injectGlobal`
 
 // ========================================
 
-ReactDOM.render(
-  <Bango />,
-  document.getElementById('root')
-);
+ReactDOM.render((
+    <Router>
+        <Bango />
+    </Router>
+    ), document.getElementById('root'));
