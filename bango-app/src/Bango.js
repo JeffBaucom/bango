@@ -6,8 +6,8 @@ import { toKana, isRomaji } from 'wanakana';
 
 
 import Nav from './Nav';
-import BangoInfo from './BangoInfo';
-import CardDisplay from './CardDisplay';
+import ScoreLine from './ScoreLine';
+import Card from './Card';
 import AnswerForm from './AnswerForm';
 
 //=============================================================================
@@ -101,10 +101,10 @@ class Bango extends React.Component {
             <Nav showMenu={this.state.showMenu} openMenu={this.showMenu} hideMenu={this.hideMenu}></Nav>
           <Game>
             <GameBoard>
-              <CardDisplay card={this.state.card} cardSet={this.state.set}/>
+              <Card card={this.state.card} cardSet={this.state.set}/>
               <AnswerForm value={this.state.input} onChange={this.handleChange} checkAnswer={this.checkAnswer}/>
           </GameBoard>
-            <BangoInfo cardCount={this.state.cardCount} score={this.state.score} result={this.state.result}/>
+            <ScoreLine cardCount={this.state.cardCount} score={this.state.score} result={this.state.result}/>
         </Game>
         </div>
     );

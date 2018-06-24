@@ -19,7 +19,7 @@ const CardText = styled.div`
 
 `
 
-class CardDisplay extends React.Component {
+class Card extends React.Component {
 
 
   render() {
@@ -50,4 +50,4 @@ class CardDisplay extends React.Component {
   }
 }
 
-export default CardDisplay
+export default Card

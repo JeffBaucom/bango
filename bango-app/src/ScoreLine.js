@@ -11,7 +11,7 @@ const StyledInfo = styled.div`
     max-width: 4rem;
 `
 
-class BangoInfo extends React.Component {
+class ScoreLine extends React.Component {
 
     render() {
         return (
@@ -27,4 +27,4 @@ class BangoInfo extends React.Component {
     }
 }
 
-export default BangoInfo
+export default ScoreLine
