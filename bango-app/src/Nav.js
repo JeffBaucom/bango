@@ -1,4 +1,7 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import Bango from './Bango'
+
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faCaret from '@fortawesome/fontawesome-free-solid/faCaretDown';
@@ -93,9 +96,7 @@ class Nav extends React.Component {
                 this.props.showMenu 
                 ? (
                 <Menu>
-                    <button>One</button>
-                    <button>Two</button>
-                    <button>Three</button>
+                    <button><Link to="/">Study</Link></button>
                 </Menu>
                 ) : (null)
                 }

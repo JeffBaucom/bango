@@ -40,15 +40,12 @@ class Bango extends React.Component {
 
      this.handleChange = this.handleChange.bind(this);
      this.checkAnswer  = this.checkAnswer.bind(this);
-     this.showMenu  = this.showMenu.bind(this);
-     this.hideMenu  = this.hideMenu.bind(this);
      console.log(cardData);
      this.state = {
       card : {
         front : 1,
         answer : cardData.deck[0]
       },
-      showMenu: false,
       input : '',
       set : cardData.set,
       deck : cardData.deck,
@@ -84,21 +81,10 @@ class Bango extends React.Component {
     this.setState({input: value});
   }
 
-    showMenu() {
-        this.setState({showMenu: true}, () => {
-            document.addEventListener('click', this.closeMenu);
-        });
-    }
-    hideMenu() {
-        this.setState({showMenu: false}, () => {
-            document.removeEventListener('click', this.hideMenu);
-        });
-    }
 
   render() {
     return (
         <div>
-            <Nav showMenu={this.state.showMenu} openMenu={this.showMenu} hideMenu={this.hideMenu}></Nav>
           <Game>
             <GameBoard>
               <Card card={this.state.card} cardSet={this.state.set}/>
