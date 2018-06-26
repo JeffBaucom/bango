@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styled from 'styled-components';
 
 //=============================================================================
@@ -25,10 +26,10 @@ class Card extends React.Component {
   render() {
     // Set the 'th' 'rd' 'st' suffix for card number
     const suffix = (this.props.cardSet === "day of the month")
-      ? this.suffix(this.props.card.front) : "";
+      ? this.suffix(this.props.card) : "";
     return (
       <CardText>
-        {this.props.card.front + suffix + " " + this.props.cardSet}
+        {this.props.card + suffix + " " + this.props.cardSet}
       </CardText>
 
       )

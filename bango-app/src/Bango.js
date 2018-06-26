@@ -40,12 +40,8 @@ class Bango extends React.Component {
 
      this.handleChange = this.handleChange.bind(this);
      this.checkAnswer  = this.checkAnswer.bind(this);
-     console.log(cardData);
      this.state = {
-      card : {
-        front : 1,
-        answer : cardData.deck[0]
-      },
+      card : 1,
       input : '',
       set : cardData.set,
       deck : cardData.deck,
@@ -55,7 +51,8 @@ class Bango extends React.Component {
   }
   
   checkAnswer() {
-    const answerCheck = (this.state.input === this.state.card.answer);
+    console.log(this.state.card);
+    const answerCheck = (this.state.input === cardData.deck[this.state.card - 1]);
     const newScore = answerCheck ? this.state.score + 1 : this.state.score - 1;
 
     let i = Math.floor(Math.random() * (this.state.deck.length));
@@ -65,10 +62,7 @@ class Bango extends React.Component {
 
     const newCard = cardData.deck[i];
     var newState = update(this.state, {
-      card: {
-        front : {$set: i + 1}, 
-        answer : {$set : newCard}
-      },
+      card: {$set: i + 1},
       input: {$set: ''},
       score: {$set: newScore},
       result: {$set: answerCheck},
