@@ -4,6 +4,8 @@
   "description": "Japanese Counter flashcard game",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
+    "prestart": "cd bango-app && yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/jeffbaucom/bango-app.git",
