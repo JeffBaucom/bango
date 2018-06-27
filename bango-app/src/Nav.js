@@ -76,27 +76,23 @@ const Menu = styled.div`
 
 
 class Nav extends React.Component {
-    handleClick = (event) => {
-        event.preventDefault();
-        this.setState({showMenu: !this.state.showMenu});
-    }
-
     render() {
         return (
             <div>
             <StyledNav>
                 <h1>番号  <Title>bango</Title></h1>
                 { this.props.showMenu ? (
-                    <FontAwesomeIcon icon={faCaret} size="lg" onClick={this.props.hideMenu} transform={{ rotate: 180 }}/>
-                    ) : (
-                    <FontAwesomeIcon icon={faCaret} size="lg" onClick={this.props.openMenu}/>
+                    <FontAwesomeIcon icon={faCaret} size="lg" onClick={this.props.menuClick} transform={{ rotate: 180 }}/>
+                ) : (
+                    <FontAwesomeIcon icon={faCaret} size="lg" onClick={this.props.menuClick}/>
                 )}
             </StyledNav>
                 {
                 this.props.showMenu 
                 ? (
                 <Menu>
-                    <button><Link to="/">Study</Link></button>
+                    <button onClick={this.props.menuClick}><Link to="/">Study</Link></button>
+                    <button onClick={this.props.menuClick}><Link to="/Login">Login</Link></button>
                 </Menu>
                 ) : (null)
                 }

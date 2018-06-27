@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { toKana, isRomaji } from 'wanakana';
 
 
-import Nav from './Nav';
 import ScoreLine from './ScoreLine';
 import Card from './Card';
 import AnswerForm from './AnswerForm';

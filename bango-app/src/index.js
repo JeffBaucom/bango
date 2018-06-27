@@ -8,6 +8,7 @@ import './skeleton.css';
 import './index.css';
 import { injectGlobal } from 'styled-components';
 import Bango from './Bango';
+import Login from './Login';
 import Nav from './Nav';
 
 
@@ -51,29 +52,28 @@ class App extends React.Component {
   constructor(props) {
      super(props);
 
-     this.showMenu  = this.showMenu.bind(this);
-     this.hideMenu  = this.hideMenu.bind(this);
+     this.menuClick  = this.menuClick.bind(this);
       this.state = {
          showMenu: false 
       }
   }
-    showMenu() {
-        this.setState({showMenu: true}, () => {
-            document.addEventListener('click', this.closeMenu);
-        });
-    }
-    hideMenu() {
-        this.setState({showMenu: false}, () => {
-            document.removeEventListener('click', this.hideMenu);
-        });
+    menuClick() {
+        if (this.state.showMenu) {
+            this.setState({showMenu: false});
+        } else {
+            this.setState({showMenu: true}, () => {
+                document.body.addEventListener('click', () => {this.setState({showMenu: false})});
+            });
+        }
     }
 
     render() {
         return (
             <Router>
                 <div>
-                    <Nav showMenu={this.state.showMenu} openMenu={this.showMenu} hideMenu={this.hideMenu}></Nav>
+                    <Nav showMenu={this.state.showMenu} menuClick={this.menuClick}></Nav>
                     <Route exact path="/" component={Bango} />
+                    <Route exact path="/login" component={Login} />
                 </div>
             </Router>
         )
