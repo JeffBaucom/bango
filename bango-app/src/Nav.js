@@ -79,7 +79,7 @@ class Nav extends React.Component {
     render() {
         return (
             <div>
-            <StyledNav>
+            <StyledNav onClick={this.props.menuClick}>
                 <h1>番号  <Title>bango</Title></h1>
                 { this.props.showMenu ? (
                     <FontAwesomeIcon icon={faCaret} size="lg" onClick={this.props.menuClick} transform={{ rotate: 180 }}/>
@@ -91,8 +91,8 @@ class Nav extends React.Component {
                 this.props.showMenu 
                 ? (
                 <Menu>
-                    <button onClick={this.props.menuClick}><Link to="/">Study</Link></button>
-                    <button onClick={this.props.menuClick}><Link to="/Login">Login</Link></button>
+                    <Link to="/"><button onClick={this.props.menuClick}>Study</button></Link>
+                    <Link to="/Login"><button onClick={this.props.menuClick}>Login</button></Link>
                 </Menu>
                 ) : (null)
                 }
