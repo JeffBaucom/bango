@@ -93,6 +93,7 @@ class Nav extends React.Component {
                 <Menu>
                     <Link to="/"><button onClick={this.props.menuClick}>Study</button></Link>
                     <Link to="/Login"><button onClick={this.props.menuClick}>Login</button></Link>
+                    <Link to="/Decks"><button onClick={this.props.menuClick}>My Decks</button></Link>
                 </Menu>
                 ) : (null)
                 }

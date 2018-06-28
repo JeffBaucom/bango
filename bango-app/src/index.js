@@ -9,6 +9,8 @@ import './index.css';
 import { injectGlobal } from 'styled-components';
 import Bango from './Bango';
 import Login from './Login';
+import Decks from './Decks';
+
 import Nav from './Nav';
 
 
@@ -74,6 +76,7 @@ class App extends React.Component {
                     <Nav showMenu={this.state.showMenu} menuClick={this.menuClick}></Nav>
                     <Route exact path="/" component={Bango} />
                     <Route exact path="/login" component={Login} />
+                    <Route exact path="/decks" component={Decks} />
                 </div>
             </Router>
         )
