@@ -14,7 +14,12 @@ class Login extends React.Component {
     render() {
         return(
             <div>
-                <h3>YOOO</h3>
+                <form action="">
+                    <label for="">Username</label>
+                    <input id="text" type="" placeholder />
+                    <label for="">Password</label>
+                    <input id="text" type="" placeholder />
+                </form>
             </div>
         );
     }
