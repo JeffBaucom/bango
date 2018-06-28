@@ -14,6 +14,14 @@ module.exports = {
       cardNumber: {
         type: Sequelize.INTEGER
       },
+      deckId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'BaseDecks',
+          key: 'id',
+          as: 'cardId'
+        }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
