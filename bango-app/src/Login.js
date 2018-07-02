@@ -21,6 +21,11 @@ const StyledInput = styled.input`
     width: 60%;
 `
 
+const StyledDiv = styled.div`
+    text-align: left;
+    margin: 0 10%;
+`
+
 class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -28,14 +33,26 @@ class Login extends React.Component {
 
     render() {
         return(
-            <div>
-                <form action="">
+            <StyledDiv class="row">
+                <form action="" class="one-half column">
+                    <h3>Login</h3>
                     <label for="">Username</label>
                     <StyledInput id="text" type="" />
                     <label for="">Password</label>
                     <StyledInput id="text" type="" />
                 </form>
-            </div>
+                <form action="" class="one-half column">
+                    <h3>Register</h3>
+                    <label for="">Username</label>
+                    <StyledInput id="text" type="" />
+                    <label for="">Email</label>
+                    <StyledInput id="text" type="" />
+                    <label for="">Password</label>
+                    <StyledInput id="text" type="" />
+                    <label for="">Confirm Password</label>
+                    <StyledInput id="text" type="" />
+                </form>
+            </StyledDiv>
         );
     }
 }
