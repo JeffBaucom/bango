@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, '/bango-app/build')));
 
+// Require routes
+require('./server/routes')(app);
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '/bango-app/build', 'index.html'));
  });
