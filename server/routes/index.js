@@ -8,5 +8,7 @@ module.exports = (app) => {
 
     app.post(('/api/base_decks'), decksController.create);
 
+    app.get(('/api/base_decks'), decksController.list);
+
     app.post(('/api/cards'), cardsController.create);
 }

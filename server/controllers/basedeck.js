@@ -10,4 +10,12 @@ module.exports = {
       .then(basedeck => res.status(201).send(basedeck))
       .catch(error => res.status(400).send(error));
   },
+  
+  list(req, res) {
+    return BaseDeck
+      .all()
+      .then(decks => res.status(200).send(decks))
+      .catch(error => res.status(400).send(error));
+  },
+  
 };
