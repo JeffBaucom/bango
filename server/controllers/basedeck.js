@@ -1,4 +1,5 @@
 const BaseDeck = require('../models').BaseDeck;
+const Card = require('../models').Card;
 
 module.exports = {
   create(req, res) {
@@ -13,7 +14,13 @@ module.exports = {
   
   list(req, res) {
     return BaseDeck
-      .all()
+      .findAll({
+          include: [{
+              model: Card,
+              as: 'cards',
+          }],
+
+      })
       .then(decks => res.status(200).send(decks))
       .catch(error => res.status(400).send(error));
   },

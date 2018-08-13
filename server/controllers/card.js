@@ -5,9 +5,10 @@ module.exports = {
     return Card
       .create({
         translation: req.body.translation,
-        deckId: req.params.todoId,
+        deckId: req.params.deckId,
+        cardNumber: req.body.cardNumber
       })
-      .then(todoItem => res.status(201).send(todoItem))
+      .then(card => res.status(201).send(card))
       .catch(error => res.status(400).send(error));
   },
 };
