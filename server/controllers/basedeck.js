@@ -24,5 +24,22 @@ module.exports = {
       .then(decks => res.status(200).send(decks))
       .catch(error => res.status(400).send(error));
   },
+  destroy(req, res) {
+    return BaseDeck
+      .findById(req.params.deckId)
+      .then(deck => {
+        if (!deck) {
+          return res.status(400).send({
+            message: 'Deck not Found',
+          });
+        }
+        return deck
+          .destroy()
+          .then(() => res.status(204).send())
+          .catch(error => res.status(400).send(error));
+      })
+      .catch(error => res.status(400).send(error));
+
+  }
   
 };
