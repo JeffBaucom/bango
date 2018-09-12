@@ -6,6 +6,8 @@ module.exports = (app) => {
         message: 'Welcome to the Bango API',
     }));
 
+    app.delete('/api/base_decks/:deckId', decksController.destroy);
+
     app.post(('/api/base_decks'), decksController.create);
 
     app.get(('/api/base_decks'), decksController.list);
