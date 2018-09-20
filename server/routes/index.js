@@ -13,4 +13,8 @@ module.exports = (app) => {
     app.get(('/api/base_decks'), decksController.list);
 
     app.post(('/api/base_decks/:deckId/cards'), cardsController.create);
+
+    app.put('/api/base_decks/:deckId/cards/:cardId', cardsController.update);
+
+    app.delete('/api/base_decks/:deckId/cards/:cardId', cardsController.destroy);
 }
