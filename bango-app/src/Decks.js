@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios';
 
+import DecksEdit from './DecksEdit';
+
 import styled from 'styled-components';
 
 //=============================================================================
@@ -29,9 +31,9 @@ class Decks extends React.Component {
     return(
       <div>
         <h3>Placeholder for Decks Page</h3>
-        <ul>
-          { this.state.decks.map(deck => <li>{deck.title}</li>) }
-        </ul>
+        <div>
+          { this.state.decks.map(deck => <DecksEdit deck={deck}/>) }
+        </div>
       </div>
     );
   }
