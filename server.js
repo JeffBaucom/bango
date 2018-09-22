@@ -10,12 +10,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, '/bango-app/build')));
+app.use(express.static(path.join(__dirname, '/client/build')));
 
 // Require routes
 require('./server/routes')(app);
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '/bango-app/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
  });
 
 

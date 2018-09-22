@@ -19,6 +19,10 @@ class DecksEdit extends React.Component {
     this.setState({editing: !this.state.editing});
   }
 
+  deleteHandler = (card) => {
+    console.log(`${card}`);
+  }
+
   render() {
     return (
       <div>
@@ -29,7 +33,8 @@ class DecksEdit extends React.Component {
           <form action="">
             <label for="">Title</label>
             <input type="text" value={this.props.deck.title} />
-            { this.props.deck.cards.map(card => <CardEdit card={card} />) }
+            { this.props.deck.cards.map(card => <CardEdit deleteCard={this.deleteHandler} card={card} />) }
+            <button>Update</button>
           </form>
         </div>)
         :
