@@ -14,6 +14,8 @@ module.exports = (app) => {
 
     app.post(('/api/base_decks/:deckId/cards'), cardsController.create);
 
+    app.post(('/api/base_decks/:deckId/cardsList'), cardsController.createAll);
+
     app.put('/api/base_decks/:deckId/cards/:cardId', cardsController.update);
 
     app.delete('/api/base_decks/:deckId/cards/:cardId', cardsController.destroy);

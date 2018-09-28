@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "@fortawesome/react-fontawesome": "^0.0.18",
     "axios": "^0.18.0",
+    "immutability-helper": "^2.8.1",
     "npm": "^6.1.0",
     "react": "^16.0.0",
     "react-addons-update": "^15.6.2",

@@ -30,7 +30,7 @@ class Decks extends React.Component {
   render() {
     return(
       <div>
-        <h3>Placeholder for Decks Page</h3>
+        <h3>Manage Decks</h3>
         <div>
           { this.state.decks.map(deck => <DecksEdit deck={deck}/>) }
         </div>
